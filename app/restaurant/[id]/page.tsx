@@ -1,10 +1,9 @@
 export default async function RestaurantPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const restaurantId = params.id;
-
+  const { id: restaurantId } = await params;
   // This page calls GET /api/restaurants/[id] and renders what it gets.
   // No calculation happens anywhere in this file — we only receive and print.
  const res = await fetch(

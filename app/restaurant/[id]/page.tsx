@@ -7,7 +7,9 @@ export default async function RestaurantPage({
 
   // This page calls GET /api/restaurants/[id] and renders what it gets.
   // No calculation happens anywhere in this file — we only receive and print.
-  const res = await fetch(`/api/restaurants/${restaurantId}`);
+ const res = await fetch(
+  `${process.env.BASE_URL}/api/restaurants/${restaurantId}`
+);
   const data = await res.json();
 
   // The averageRating comes from the backend AVG(rating) calculation.

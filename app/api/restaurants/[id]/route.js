@@ -7,7 +7,7 @@ const pool = new Pool({
 
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const restaurantId = parseInt(id, 10);
 
     // Check if restaurant exists
